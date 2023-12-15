@@ -1,8 +1,11 @@
 module github.com/uzrnem/go/validator
 
-go 1.21rc2
+go 1.20
 
-require github.com/go-playground/validator/v10 v10.16.0
+require (
+	github.com/go-playground/validator/v10 v10.16.0
+	github.com/uzrnem/go/errors v0.0.0-20231214154125-4d9e521ee76c
+)
 
 require (
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect

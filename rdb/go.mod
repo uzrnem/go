@@ -1,6 +1,6 @@
 module github.com/uzrnem/go/rdb
 
-go 1.21rc2
+go 1.20
 
 require gorm.io/gorm v1.25.5
 

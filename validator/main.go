@@ -1,10 +1,9 @@
 package main
 
 import (
-	"context"
 	"reflect"
 
-	pkgErr "expensez/pkg/errors"
+	pkgErr "github.com/uzrnem/go/errors"
 
 	"github.com/go-playground/validator/v10"
 )
@@ -48,10 +47,7 @@ func (cv *CustomValidator) Validate(i any) []error {
 	return nil
 }
 
-func Validate(c context.Context, modal any) []error {
-	if err := c.Bind(modal); err != nil {
-		return []error{pkgErr.New(pkgErr.BAD_REQUEST, err.Error())}
-	}
+func Validate(modal any) []error {
 	val := &CustomValidator{validator: validator.New()}
 	return val.Validate(modal)
 }

@@ -1,8 +1,8 @@
-package main
+package rdb
 
 import (
-	"strings"
 	"context"
+	"strings"
 
 	"gorm.io/gorm"
 )
@@ -69,14 +69,14 @@ func (r *RepoStrct) FetchRow(sql string, res any) {
 }
 
 type Query struct {
-	DB *gorm.DB
-	table string
+	DB     *gorm.DB
+	table  string
 	silect string
-	join string
-	where string
-	group string
-	order string
-	limit int
+	join   string
+	where  string
+	group  string
+	order  string
+	limit  int
 	offset int
 	result any
 }

@@ -40,6 +40,14 @@ func (r *RepoStrct) Delete(c context.Context, modal any, id int) error {
 	return nil
 }
 
+func (r *RepoStrct) DeleteOne(c context.Context, modal any) error {
+	err := r.DB.Delete(modal).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func (r *RepoStrct) Get(c context.Context, modal any) (any, error) {
 	err := r.DB.First(modal).Error
 	if err != nil {
